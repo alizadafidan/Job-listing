@@ -18,7 +18,7 @@ html {
 
 body {
   font-family: "League Spartan", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 /*********************/
@@ -50,4 +50,44 @@ body {
   .main {
     width: 94%;
   }
+}
+
+/**********************/
+/* TABLET DESIGN */
+.tablet-btn {
+  background-color: var(--tablet-color);
+  color: var(--primary-color);
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.3rem;
+  margin: 0.5rem;
+  font-size: inherit;
+}
+
+.tablet-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--tablet-color);
+}
+
+.tablet-btn-filtered {
+  cursor: default;
+  padding-right: 0;
+}
+
+.tablet-btn-filtered:hover {
+  background-color: var(--tablet-color);
+  color: var(--primary-color);
+}
+
+.tablet-btn-filtered::after {
+  position: relative;
+  content: "X";
+  background-color: var(--primary-color);
+  color: var(--tablet-color);
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  border-radius: 0 0.3rem 0.3rem 0;
 }
