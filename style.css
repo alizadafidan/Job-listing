@@ -1,0 +1,53 @@
+:root {
+  --primary-color: hsl(180, 29%, 50%);
+  --bg-color: hsl(180, 52%, 96%);
+  --tablet-color: hsl(180, 31%, 95%);
+  --grayish-green: hsl(180, 8%, 52%);
+  --dark-grayish-green: hsl(180, 14%, 20%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  font-size: 1.5rem;
+}
+
+/*********************/
+/* HEADER SECTION */
+
+.header {
+  background-color: var(--primary-color);
+}
+
+.header-img {
+  width: 100vw;
+  height: 10rem;
+  object-fit: cover; /*sets how the img should be resized to fit its container.*/
+}
+
+/**********************/
+/* MAIN  */
+
+.main {
+  width: 80%;
+  margin: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 769px) {
+  .main {
+    width: 94%;
+  }
+}
