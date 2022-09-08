@@ -156,6 +156,7 @@ body {
   justify-content: space-between;
   align-items: center;
   border-radius: 0.6rem;
+  padding-right: 1.5rem;
   position: relative;
   box-shadow: 0.2rem 0.4rem 1rem var(--grayish-green);
   overflow: hidden;
