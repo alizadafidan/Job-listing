@@ -17,6 +17,7 @@ class FilterView {
       const btn = e.target.closest(".tablet-btn.filtered");
       if (!btn) return;
       const removeTag = btn.innerText;
+      handler(removeTag);
     });
   }
 
