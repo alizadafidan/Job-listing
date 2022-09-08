@@ -12,9 +12,11 @@
   box-sizing: border-box;
 }
 
-html {
+/*ADJUST*/
+
+/* html {
   font-size: 62.5%;
-}
+} */
 
 body {
   font-family: "League Spartan", sans-serif;
@@ -60,10 +62,10 @@ body {
   font-weight: 700;
   border: none;
   cursor: pointer;
-  padding: 0.5rem 0.7rem;
-  border-radius: 0.3rem;
+  padding: 0.8rem 0.9rem;
+  border-radius: 0.6rem;
   margin: 0.5rem;
-  font-size: inherit;
+  font-size: 1.2rem;
 }
 
 .tablet-btn:hover {
@@ -90,4 +92,203 @@ body {
   cursor: pointer;
   margin-left: 0.5rem;
   border-radius: 0 0.3rem 0.3rem 0;
+}
+
+/* BORDER */
+.right-border {
+  position: absolute;
+  left: 0;
+  height: 98%;
+  margin: 0;
+  width: 0;
+  border: 0.25rem solid #5ba4a4;
+  border-radius: 0.6rem 0 0 0.6rem;
+}
+
+.single-line {
+  width: 100%;
+  margin: 1rem 0;
+  border-top: 0.1rem solid var(--grayish-green);
+}
+
+/***************************************************/
+/* FILTER SECTION */
+.filter {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  margin: 0 1rem;
+  position: relative;
+  top: -3rem;
+  border-radius: 0.6rem;
+  min-height: 4rem;
+  box-shadow: 0.1rem 0.1rem 0.3rem var(--grayish-green);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.filter-tablets {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter-span-clear {
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.filter-span-clear:hover {
+  color: var(--dark-grayish-green);
+}
+
+/*********************************/
+/* Job listings */
+.job-listings {
+  font-size: 1.4rem;
+}
+.job-listings .job {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.6rem;
+  position: relative;
+  box-shadow: 0.2rem 0.4rem 1rem var(--grayish-green);
+  overflow: hidden;
+  z-index: 1;
+  margin: 1rem;
+  transition: all 0.3s ease;
+}
+
+.job-listings .job-details {
+  display: flex;
+  position: relative;
+  padding: 1rem 2rem;
+}
+
+.job-listings .job-details .image {
+  max-width: 8.8rem;
+  max-height: 8.8rem;
+  object-fit: contain;
+}
+
+.job-listings .job-details .info {
+  display: grid;
+  padding: 1rem;
+  font-size: 1.2rem;
+  align-items: center;
+  grid-template-areas: "companyName status status" "jobName jobName jobName" "jobDes jobDes jobDes";
+}
+
+.job-listings .job-details .info .company-name {
+  grid-area: companyName;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.job-listings .job-details .info .status {
+  grid-area: status;
+  display: flex;
+  align-items: center;
+}
+
+.job-listings .job-details .info .status .job-status {
+  color: #fff;
+  height: 1.6rem;
+  border-radius: 1.2rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem 0;
+  margin-right: 0.5rem;
+}
+
+.job-listings .job-details .info .status .job-status-new {
+  background-color: var(--primary-color);
+}
+.job-listings .job-details .info .status .job-status-featured {
+  background-color: var(--dark-grayish-green);
+}
+
+.job-listings .job-details .info .job-name {
+  grid-area: jobName;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin: 0.75rem 0;
+  font-size: 1.7rem;
+}
+
+.job-listings .job-details .info .job-description {
+  grid-area: jobDes;
+  align-items: center;
+  opacity: 0.7;
+  font-size: 1rem;
+}
+/*ADD DOTS BETWEEN INFOS*/
+
+.job-listings .job-details .info .job-description span::after {
+  content: ".";
+  font-size: 1.5rem;
+  padding: 1rem;
+  vertical-align: bottom;
+}
+
+/*remove last dot*/
+
+.job-listings .job-details .info .job-description span:last-of-type::after {
+  content: "";
+}
+
+.job-listings .job-tablets {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.job-listings .job:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 769px) {
+  .job-listings .job {
+    flex-direction: column;
+    justify-content: center;
+    overflow: visible;
+    align-items: flex-start;
+    margin: 3rem 1rem;
+    padding: 0 2rem;
+  }
+  .job-listings .job-details {
+    flex-direction: column;
+    padding: 0;
+    position: relative;
+    top: -2rem;
+  }
+  .job-listings .job-details .image {
+    width: 4rem;
+    height: 4rem;
+  }
+  .job-listings .job-details .info {
+    padding: 0;
+    padding-top: 1rem;
+    font-size: 1rem;
+  }
+  .job-listings .job-details .info .job-name {
+    font-size: 1.2rem;
+  }
+  .job-listings .job-details .info .job-description {
+    font-size: 0.5rem;
+  }
+  .job-listings .job-tablets,
+  .job-listings .job .single-line {
+    position: relative;
+    top: -2rem;
+  }
+  .job-listings .job .single-line {
+    display: block;
+  }
 }
