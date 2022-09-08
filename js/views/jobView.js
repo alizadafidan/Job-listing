@@ -20,6 +20,7 @@ class JobView {
     if (!data) return;
     this._data = data;
     const markup = `${data.map((job) => this.jobMarkup(job)).join("")}`;
+    this._clear();
     this._parentElement.insertAdjacentElement("beforeend", markup);
   }
 
