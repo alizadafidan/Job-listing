@@ -1,6 +1,6 @@
 class JobView {
   _data;
-  _parentElement = document.querySelector(".job_listings");
+  _parentElement = document.querySelector(".job-listings");
   _filterContainer = document.querySelector(".filter");
 
   addHandlerClick(handler) {
@@ -21,7 +21,7 @@ class JobView {
     this._data = data;
     const markup = `${data.map((job) => this.jobMarkup(job)).join("")}`;
     this._clear();
-    this._parentElement.insertAdjacentElement("beforeend", markup);
+    this._parentElement.insertAdjacentHTML("beforeend", markup);
   }
 
   jobMarkup(job) {

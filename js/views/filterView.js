@@ -14,7 +14,7 @@ class FilterView {
   addHandlerRemoveFilter(handler) {
     this._tabletsContainer.addEventListener("click", (e) => {
       e.preventDefault();
-      const btn = e.target.closest(".tablet-btn.filtered");
+      const btn = e.target.closest(".tablet-btn-filtered");
       if (!btn) return;
       const removeTag = btn.innerText;
       handler(removeTag);
@@ -25,7 +25,7 @@ class FilterView {
     this._data = data;
     const markup = `${data.map((job) => this.jobMarkup(job)).join("")}`;
     this._clear();
-    this._tabletsContainer.insertAdjacentElement("beforeend", markup);
+    this._tabletsContainer.insertAdjacentHTML("beforeend", markup);
   }
 
   jobMarkup(filterString) {
